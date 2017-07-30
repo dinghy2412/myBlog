@@ -1,0 +1,26 @@
+[
+    {
+        "text" : "Home",
+        "link" : "Home"
+    },
+    {
+        "text" : "Codebox",
+        "link" : "Code"
+    },
+    {
+        "text" : "About Me",
+        "link" : "AboutMe"
+    },
+    {
+        "text" : "About Blog",
+        "link" : "AboutBlog"
+    },
+    {
+        "text" : "Guestbook",
+        "link" : "Guestbook"
+    },
+    {
+        "text" : "Donate",
+        "link" : "Donate"
+    }
+]

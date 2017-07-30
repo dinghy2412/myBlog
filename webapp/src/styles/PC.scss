@@ -1,0 +1,107 @@
+html, body, .rightList, #app, #appBox {
+    min-height: 100%;
+    font-family: "Noto Serif";
+}
+
+body {
+    background-color: rgba(78, 78, 77, 0.23);
+}
+
+#app {
+    width: 100%;
+    max-width: 1280px;
+    user-select: none;
+    margin: 0 auto;
+    box-shadow: -1px -5px 10px #DADADA, 1px -5px 10px #DADADA;
+    position: relative;
+    overflow: inherit;
+}
+
+//左侧列表
+    .leftList {
+        max-width: 426px;
+        border-right: 1px solid #eee;
+        padding: 50px 35px;
+        background-color: #fff;
+        position: absolute;
+        ul {
+            margin-top: 70px;
+            padding: 0;
+            li {
+                height: 38px;
+                font-size: 15px;
+                line-height: 38px;
+                border-bottom: 1px solid #eee;
+                list-style: none;
+
+                a {
+                    color: #000;
+                }
+
+                a:hover {
+                    font-weight: bold;
+                    text-decoration: none;
+                    font-size: 17px;
+                }
+            }
+
+            li:last-child {
+                border: 0;
+            }
+        }
+    }
+
+//右侧列表
+.rightList {
+    float: left;
+    padding: 65px 65px 0;
+    text-align: justify;
+
+    .articleBox {
+        background-color: #fff;
+        padding: 8% 10% calc(8% - 30px);
+        margin-bottom: 65px;
+    }
+
+    h1 {
+        margin-bottom: 50px;
+    }
+
+    p {
+        font-size: 18px;
+        margin-bottom: 30px;
+        line-height: 31px;
+        letter-spacing : 2px;
+    }
+    a {
+        cursor: pointer;
+        margin-top: 20px;
+    }
+}
+
+//博主信息
+.bloggerName {
+
+}
+
+//标签
+.labelBox {
+    width: 90%;
+    margin: 60px auto 0;
+    h4 {
+        margin: 15px 0;
+    }
+    a {
+        color: #000;
+        padding: 0 3px;
+        margin-bottom: 3px;
+        cursor: pointer;
+    }
+    a:hover {
+        text-decoration: none;
+        color: red;
+    }
+}
+
+
+
