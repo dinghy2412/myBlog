@@ -36,7 +36,7 @@ function getDefaultModules() {
         },
         {
           test: /\.scss/,
-          loader : ExtractTextPlugin.extract("style-loader", "css-loader!autoprefixer", "sass-loader?outputStyle=expanded"), //打包
+          loader : ExtractTextPlugin.extract("style", 'css!sass'), //打包
         },
         {
           test: /\.less/,

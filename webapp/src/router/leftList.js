@@ -10,20 +10,51 @@ class LeftList extends React.Component {
     constructor (props) {
         super(props);
         var that = this;
-        $.ajax({
-            url : "/json/leftList.json",
-            method : "GET",
-            success : function (res) {
-                var listCategories = that.state.listCategories;
-                res.forEach(function (ele) {
-                    listCategories.push(ele)
-                });
-                that.setState({
-                    listCategories : listCategories
-                })
-            }
+        // $.ajax({
+        //     url : "/json/leftList.json",
+        //     method : "GET",
+        //     success : function (res) {
+        //         var listCategories = that.state.listCategories;
+        //         res.forEach(function (ele) {
+        //             listCategories.push(ele)
+        //         });
+		//
+        //     }
+        // })
+
+    }
+
+    componentWillMount () {
+        this.setState({
+            listCategories : [
+                {
+                    "text" : "Home",
+                    "link" : "Home"
+                },
+                {
+                    "text" : "Codebox",
+                    "link" : "Code"
+                },
+                {
+                    "text" : "About Me",
+                    "link" : "AboutMe"
+                },
+                {
+                    "text" : "About Blog",
+                    "link" : "AboutBlog"
+                },
+                {
+                    "text" : "Guestbook",
+                    "link" : "Guestbook"
+                },
+                {
+                    "text" : "Donate",
+                    "link" : "Donate"
+                }
+            ]
+
         })
-    };
+    }
 
     state = {
         listCategories : [],

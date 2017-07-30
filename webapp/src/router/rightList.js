@@ -36,6 +36,7 @@ class RightList extends React.Component {
     render () {
         return (
             <div className="rightList col-xs-12 col-sm-8 col-md-8 col-lg-8 col-sm-offset-4 col-md-offset-4 col-lg-offset-4">
+                <div style={{fontSize: '50px'}}>Welcome to MrDIng's site</div>
                 <ArticlePreview article={this.state.article}/>
             </div>
         );

@@ -13,7 +13,7 @@ class App extends React.Component {
                 <div id="appBox" className="clearfix">
                     <Route component={LeftList}></Route>
 
-                    <Route path="/:path" component={RightList}/>
+                    <Route path="/" component={RightList}/>
                 </div>
             </Router>
         );

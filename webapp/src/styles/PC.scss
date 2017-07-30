@@ -17,7 +17,9 @@ body {
     overflow: inherit;
 }
 
-//左侧列表
+/*
+    左侧列表
+ */
     .leftList {
         max-width: 426px;
         border-right: 1px solid #eee;
@@ -51,7 +53,9 @@ body {
         }
     }
 
-//右侧列表
+/*
+    右侧列表
+ */
 .rightList {
     float: left;
     padding: 65px 65px 0;
@@ -79,12 +83,16 @@ body {
     }
 }
 
-//博主信息
+/*
+    博主信息
+ */
 .bloggerName {
 
 }
 
-//标签
+/*
+    标签
+ */
 .labelBox {
     width: 90%;
     margin: 60px auto 0;
