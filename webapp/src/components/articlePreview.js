@@ -11,7 +11,8 @@ class ArticlePreview extends React.Component {
     }
 
     hideBtnClick (id) {
-        var article       = this.state.article;
+
+        var article = this.state.article;
         article[id].style = {
             height : "auto",
             overflow : "inherit"
@@ -23,7 +24,8 @@ class ArticlePreview extends React.Component {
     }
 
     showBtnClick (id) {
-        var article       = this.state.article;
+
+        var article = this.state.article;
         article[id].style = {
             height : '500px',
             overflow : "hidden"
@@ -42,6 +44,13 @@ class ArticlePreview extends React.Component {
         })
     }
 
+    componentDidMount (nextProps) {
+        var article = this.props.article;
+        this.setState({
+            article : article
+        })
+    }
+
     state = {
         article : []
     };
@@ -49,16 +58,19 @@ class ArticlePreview extends React.Component {
     render () {
         return <div>
             {
-                this.state.article.map(function (ele, id) {
-                    return <div className="articleBox" key={ele.id}>
+                this.state.article.map((ele, id) => {
+
+                    return <div className="articleBox clearfix" key={ele.id}>
                         <h1>{ele.title}</h1>
                         <div dangerouslySetInnerHTML={{
                             __html : ele.HTML
-                        }} style={ele.style ? ele.style : {height : '500px', overflow : "hidden"}}></div>
-                        <a className={ele.showAllFlag ? 'hide' : 'show'} onClick={this.hideBtnClick.bind(null, id)}>Read All</a>
-                        <a className={ele.showAllFlag ? 'show' : 'hide'} onClick={this.showBtnClick.bind(null, id)}>Pack up</a>
+                        }} style={ele.style ? ele.style : {height : '300px', overflow : "hidden"}}></div>
+                        <a className={ele.showAllFlag ? 'hidden' : 'show'} onClick={this.hideBtnClick.bind(null, id)}>Read
+                            All</a>
+                        <a className={ele.showAllFlag ? 'show' : 'hidden'} onClick={this.showBtnClick.bind(null, id)}>Pack
+                            up</a>
                     </div>
-                }, this)
+                })
             }
         </div>
     }

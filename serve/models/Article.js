@@ -17,6 +17,10 @@ module.exports = function (sequelize, DataTypes) {
 					return this.setDataValue('tags', JSON.stringify(tags))
 				}
 			},
+            menuType : {
+                type : DataTypes.STRING,
+                allowNull : false
+            },
 			id : {
 				type : DataTypes.BIGINT(11),
 				autoIncrement:true,
