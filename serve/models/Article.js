@@ -5,11 +5,13 @@ module.exports = function (sequelize, DataTypes) {
 	return sequelize.define('article', {
 			title : {
 				type : DataTypes.STRING,
-				allowNull : false
+				allowNull : false,
+                charset : "utf8"
 			},
 			tags : {
 				type : DataTypes.STRING,
-				get : function () {
+                charset : "utf8",
+                get : function () {
 					const tags = JSON.parse(this.getDataValue('tags'));
 					return tags
 				},
@@ -28,8 +30,9 @@ module.exports = function (sequelize, DataTypes) {
 			},
 			HTML : {
 				type : DataTypes.TEXT,
-				allowNull : false
-			}
+				allowNull : false,
+                charset : "utf8"
+            }
 		},
 		{
 			timestamps : true,

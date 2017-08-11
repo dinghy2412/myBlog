@@ -5,8 +5,9 @@ module.exports = function (sequelize, DataTypes) {
 	return sequelize.define('user', {
 			userName : {
 				type : DataTypes.STRING,
-				allowNull : false
-			},
+				allowNull : false,
+                charset : "utf8"
+            },
 			phoneNumber : {
 				type : DataTypes.STRING,
 				unique : true
