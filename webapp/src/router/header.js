@@ -13,7 +13,7 @@ class Header extends React.Component {
         return (
             <header>
                 <div className="headerBox clearfix">
-                    <div className="welLan">不要仰望别人，自己亦是风景...</div>
+                    <div className="welLan">Welcome...</div>
                     <iframe frameBorder="no" marginWidth="0" marginHeight="0" width='298' height='52' src="//music.163.com/outchain/player?type=2&id=31165295&auto=0&height=32"></iframe>
                 </div>
             </header>
