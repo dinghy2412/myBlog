@@ -12,7 +12,6 @@ class LeftList extends React.Component {
             article : [],
             path : this.props.match.params.path
         };
-        console.log(this)
     }
 
     loadlists (menuType) {

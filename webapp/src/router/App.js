@@ -6,7 +6,7 @@ import {BrowserRouter as Router, Route, Switch, HashHistory} from 'react-router-
 import LeftList   from '../router/leftList'
 import RightList from '../router/rightList'
 import Header from '../router/header'
-import Banner from '../router/banner'
+import Home from '../router/home'
 
 class App extends React.Component {
     render () {
@@ -14,13 +14,13 @@ class App extends React.Component {
             <Router history={HashHistory}>
                 <div>
                     <Route path="/" component={Header}></Route>
-                    <Route exact strict path="/" component={Banner}></Route>
                     <div id="main" className="clearfix">
+                        <Route exact strict path="/" component={Home}></Route>
                         <Switch>
                             <Route path="/:path" component={LeftList}></Route>
-                            <Route path="/" component={LeftList}></Route>
+                            {/*<Route path="/" component={LeftList}></Route>*/}
                         </Switch>
-                        <Route component={RightList}/>
+                        {/*<Route component={RightList}/>*/}
                     </div>
                 </div>
             </Router>

@@ -27,7 +27,7 @@ class ArticlePreview extends React.Component {
 
         var article = this.state.article;
         article[id].style = {
-            height : '500px',
+            height : '300px',
             overflow : "hidden"
         };
         article[id].showAllFlag = false;
@@ -62,12 +62,18 @@ class ArticlePreview extends React.Component {
 
                     return <div className="articleBox clearfix" key={ele.id}>
                         <h1>{ele.title}</h1>
-                        <div dangerouslySetInnerHTML={{
+                        <div className="dateView">
+                            {
+                                moment(ele.createdAt).format("YYYY-MM-DD")
+                            }
+                            <span>作者 : {ele.author.userName}</span>
+                        </div>
+                        <div className="articleContent" dangerouslySetInnerHTML={{
                             __html : ele.HTML
                         }} style={ele.style ? ele.style : {height : '300px', overflow : "hidden"}}></div>
-                        <a className={ele.showAllFlag ? 'hidden' : 'show'} onClick={this.hideBtnClick.bind(null, id)}>Read
+                        <a className={ele.showAllFlag ? 'hidden toggleBtn' : 'show toggleBtn'} onClick={this.hideBtnClick.bind(null, id)}>Read
                             All</a>
-                        <a className={ele.showAllFlag ? 'show' : 'hidden'} onClick={this.showBtnClick.bind(null, id)}>Pack
+                        <a className={ele.showAllFlag ? 'show toggleBtn' : 'hidden toggleBtn'} onClick={this.showBtnClick.bind(null, id)}>Pack
                             up</a>
                     </div>
                 })

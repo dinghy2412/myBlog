@@ -66,11 +66,14 @@ section#banner {
     height: 250px;
     overflow: hidden;
     background-color: #000;
+    position: relative;
+    z-index: 1;
 
     img {
         width: 100%;
         height: 250px;
-        object-fit: scale-down;
+        display: block;
+        //object-fit: scale-down;
     }
 }
 
@@ -129,22 +132,37 @@ section#banner {
         margin-bottom: 65px;
         border: 1px solid #d6cdc1;
         border-radius: 5px;
+        position: relative;
+        .articleContent {
+            -webkit-mask-image: linear-gradient(#000 calc(100% - 70px),transparent 100%);
+        }
+        .dateView {
+            color: #838383;
+            line-height: 26px;
+            height: 26px;
+            padding-left: 30px;
+            margin-bottom: 10px;
+            background: #f6f6f6 url('../../images/time.jpg') 10px center no-repeat;
+            span {
+                margin-left: 10px;
+            }
+        }
+        .toggleBtn {
+            cursor: pointer;
+            margin-top: 20px;
+            float: right;
+        }
     }
 
     h1 {
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
 
     p {
         font-size: 18px;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
         line-height: 31px;
         letter-spacing: 2px;
-    }
-    a {
-        cursor: pointer;
-        margin-top: 20px;
-        float: right;
     }
 }
 
