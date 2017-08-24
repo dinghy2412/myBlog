@@ -19,7 +19,6 @@ class App extends React.Component {
                     <div id="main" className="clearfix">
                         <Switch>
                             <Route path="/:path" component={LeftList}></Route>
-                            {/*<Route path="/" component={LeftList}></Route>*/}
                         </Switch>
                         <Route path="/:path" component={RightList}/>
                     </div>

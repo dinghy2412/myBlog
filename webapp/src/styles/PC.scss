@@ -51,11 +51,10 @@ header {
         margin: 0 auto;
         font-style: italic;
 
-        .welLan {
-            font-size: 27px;
+        svg {
+            font-size: 100px;
             color: #fff;
-            line-height: 32px;
-            display: inline;
+            margin-top: -32px;
         }
 
         iframe {

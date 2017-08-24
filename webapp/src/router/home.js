@@ -13,13 +13,22 @@ class Home extends React.Component {
                 <section id="banner">
                     <div className="swiper-wrapper">
                         <div className="swiper-slide">
-                            <img src="http://7xnqn3.com2.z0.glb.qiniucdn.com/b00ec83c36bd4fef8e8df83af230e730" alt=""/>
+                            <img src="http://on20i35c9.bkt.clouddn.com/banner/WechatIMG564.jpeg" alt=""/>
                         </div>
                         <div className="swiper-slide">
-                            <img src="http://7xnqn3.com2.z0.glb.qiniucdn.com/510bf481f80d485f8d95b3e9efdf32ce" alt=""/>
+                            <img src="http://on20i35c9.bkt.clouddn.com/banner/WechatIMG567.jpeg" alt=""/>
                         </div>
                         <div className="swiper-slide">
-                            <img src="http://7xnqn3.com2.z0.glb.qiniucdn.com/3943f9311fb247db87701ce8de04d5d6" alt=""/>
+                            <img src="http://on20i35c9.bkt.clouddn.com/banner/WechatIMG574.jpeg" alt=""/>
+                        </div>
+                        <div className="swiper-slide">
+                            <img src="http://on20i35c9.bkt.clouddn.com/banner/WechatIMG568.jpeg" alt=""/>
+                        </div>
+                        <div className="swiper-slide">
+                            <img src="http://on20i35c9.bkt.clouddn.com/banner/WechatIMG569.jpeg" alt=""/>
+                        </div>
+                        <div className="swiper-slide">
+                            <img src="http://on20i35c9.bkt.clouddn.com/banner/WechatIMG573.jpeg" alt=""/>
                         </div>
                         <div className="swiper-pagination"></div>
                     </div>
