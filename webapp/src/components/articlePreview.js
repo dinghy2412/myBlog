@@ -13,10 +13,6 @@ class ArticlePreview extends React.Component {
     hideBtnClick (id) {
 
         var article = this.state.article;
-        article[id].style = {
-            height : "auto",
-            overflow : "inherit"
-        };
         article[id].showAllFlag = true;
         this.setState({
             article : article
@@ -26,10 +22,6 @@ class ArticlePreview extends React.Component {
     showBtnClick (id) {
 
         var article = this.state.article;
-        article[id].style = {
-            height : '300px',
-            overflow : "hidden"
-        };
         article[id].showAllFlag = false;
 
         this.setState({
@@ -68,9 +60,9 @@ class ArticlePreview extends React.Component {
                             }
                             <span>作者 : {ele.author.userName}</span>
                         </div>
-                        <div className="articleContent" dangerouslySetInnerHTML={{
+                        <div className={ele.showAllFlag ? "" : "articleShadow articlePreview"} dangerouslySetInnerHTML={{
                             __html : ele.HTML
-                        }} style={ele.style ? ele.style : {height : '300px', overflow : "hidden"}}></div>
+                        }}></div>
                         <a className={ele.showAllFlag ? 'hidden toggleBtn' : 'show toggleBtn'} onClick={this.hideBtnClick.bind(null, id)}>Read
                             All</a>
                         <a className={ele.showAllFlag ? 'show toggleBtn' : 'hidden toggleBtn'} onClick={this.showBtnClick.bind(null, id)}>Pack

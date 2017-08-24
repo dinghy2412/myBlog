@@ -1,26 +1,36 @@
-html, body, .rightList, #app {
-    min-height: 100%;
-    font-family: "Noto Serif";
+//html, body, #app, #box, #main, #homeBox {
+//    height: 100%;
+//}
+
+#homeBox {
+    position: fixed;
+    top: 32px;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
 body {
     background: none #ededef repeat left top;
-    font-family: -apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
+    font-family: -apple-system, SF UI Text, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;
 
 }
 
 #app {
-    padding-top: 52px;
+    padding: 32px 0;
+}
+
+#box {
+
 }
 
 #main {
     width: 100%;
     max-width: 1280px;
-    user-select: none;
     margin: 0 auto;
-    //box-shadow: -1px -5px 10px #DADADA, 1px -5px 10px #DADADA;
+    user-select: none;
     position: relative;
-    overflow: inherit;
+    padding-top: 80px;
 }
 
 /*
@@ -29,7 +39,7 @@ body {
 
 header {
     width: 100%;
-    height: 52px;
+    height: 32px;
     background: url('http://on20i35c9.bkt.clouddn.com/dinghyu/2016071517424013110tu26.png?imageView2/1/w/1280/h/52') left 50%;
     position: fixed;
     top: 0;
@@ -44,13 +54,13 @@ header {
         .welLan {
             font-size: 27px;
             color: #fff;
-            line-height: 52px;
+            line-height: 32px;
             display: inline;
         }
 
         iframe {
             border: none;
-            margin-top: 0;
+            margin-top: -10px;
             float: right;
         }
     }
@@ -58,26 +68,126 @@ header {
 }
 
 /*
-    banner
+    home
  */
-
-section#banner {
-    width: 100%;
-    height: 250px;
-    overflow: hidden;
-    background-color: #000;
-    position: relative;
-    z-index: 1;
-
-    img {
+#homeBox {
+    /*
+		banner
+	 */
+    section#banner {
         width: 100%;
-        height: 250px;
-        display: block;
-        //object-fit: scale-down;
+        height: 60%;
+        overflow: hidden;
+        background-color: #000;
+        position: relative;
+        z-index: 1;
+
+        img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: contain;
+        }
     }
+    /*
+        入口
+     */
+    section.entranceBox {
+        width: 100%;
+        height: calc(40% - 32px);
+        background-color: #f3f3f3;
+        position: relative;
+        a.centerBox {
+            width: 50%;
+            height: 90px;
+            margin: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+
+        .centerBoxLast {
+            width: 191px;
+            height: 146px;
+            margin: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+        div.work, div.life, div.msg {
+            width: 25%;
+            height: 100%;
+            float: left;
+            box-sizing: border-box;
+            border-right: 1px solid #fff;
+            position: relative;
+            .icon {
+                width: 20%;
+                font-size: 50px;
+                color: #6d6d6d;
+                margin: 0 auto 20px;
+                display: block;
+            }
+            div.title {
+                font-size: 20px;
+                color: #868686;
+                line-height: 20px;
+                text-align: center;
+            }
+        }
+        div.aboutMe {
+            width: 25%;
+            height: 100%;
+            float: left;
+            box-sizing: border-box;
+            border: none;
+            position: relative;
+
+            div.title {
+                font-size: 20px;
+                color: #868686;
+                text-align: left;
+            }
+            div.eMail, div.phoneNum {
+                line-height: 20px;
+                font-size: 16px;
+                color: #6d6d6d;
+                margin-top: 10px;
+                svg {
+                    font-size: 20px;
+                    margin-right: 10px;
+                }
+            }
+            .weixin, .weibo {
+                font-size: 40px;
+                display: inline;
+                margin: 10px 0 0;
+            }
+
+            .weibo {
+                font-size: 44px;
+                margin-left: 50px;
+            }
+        }
+    }
+
 }
 
+/*
+    footer
+ */
 
+#footer {
+    width: 100%;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    background-color: #e6e6e6;
+}
 
 /*
     右侧列表
@@ -85,7 +195,6 @@ section#banner {
 #rightList {
     max-width: 426px;
     padding: 50px 35px;
-    margin-top: 45px;
     background-color: #fff;
     border: 1px solid #d6cdc1;
     border-radius: 5px;
@@ -123,7 +232,7 @@ section#banner {
  */
 #leftList {
     float: left;
-    padding: 45px 65px 0;
+    padding: 0 65px;
     text-align: justify;
 
     .articleBox {
@@ -133,8 +242,12 @@ section#banner {
         border: 1px solid #d6cdc1;
         border-radius: 5px;
         position: relative;
-        .articleContent {
-            -webkit-mask-image: linear-gradient(#000 calc(100% - 70px),transparent 100%);
+        .articleShadow {
+            -webkit-mask-image: linear-gradient(#000 calc(100% - 70px), transparent 100%);
+        }
+        .articlePreview {
+            height: 300px;
+            overflow: hidden;
         }
         .dateView {
             color: #838383;
@@ -229,22 +342,37 @@ section#banner {
     animation-delay: -1.0s;
 }
 
-@-webkit-keyframes rotate { 100% { -webkit-transform: rotate(360deg) }}
-@keyframes rotate { 100% { transform: rotate(360deg); -webkit-transform: rotate(360deg) }}
+@-webkit-keyframes rotate {
+    100% {
+        -webkit-transform: rotate(360deg)
+    }
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg)
+    }
+}
 
 @-webkit-keyframes bounce {
-    0%, 100% { -webkit-transform: scale(0.0) }
-    50% { -webkit-transform: scale(1.0) }
+    0%, 100% {
+        -webkit-transform: scale(0.0)
+    }
+    50% {
+        -webkit-transform: scale(1.0)
+    }
 }
 
 @keyframes bounce {
     0%, 100% {
         transform: scale(0.0);
         -webkit-transform: scale(0.0);
-    } 50% {
-          transform: scale(1.0);
-          -webkit-transform: scale(1.0);
-      }
+    }
+    50% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
 }
 
 

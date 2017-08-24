@@ -10,18 +10,6 @@ class RightList extends React.Component {
     constructor(props) {
         super(props);
         var that = this;
-        // $.ajax({
-        //     url : "/json/leftList.json",
-        //     method : "GET",
-        //     success : function (res) {
-        //         var listCategories = that.state.listCategories;
-        //         res.forEach(function (ele) {
-        //             listCategories.push(ele)
-        //         });
-        //
-        //     }
-        // })
-
     }
 
     componentWillMount() {
@@ -32,24 +20,20 @@ class RightList extends React.Component {
                     "link": ""
                 },
                 {
-                    "text": "Codebox",
-                    "link": "Codebox"
+                    "text": "Code",
+                    "link": "Code"
                 },
                 {
-                    "text": "AboutMe",
-                    "link": "AboutMe"
-                },
-                {
-                    "text": "AboutBlog",
-                    "link": "AboutBlog"
+                    "text": "Life",
+                    "link": "Life"
                 },
                 {
                     "text": "Guestbook",
                     "link": "Guestbook"
                 },
                 {
-                    "text": "Donate",
-                    "link": "Donate"
+                    "text": "AboutMe",
+                    "link": "AboutMe"
                 }
             ]
 
@@ -69,7 +53,6 @@ class RightList extends React.Component {
             <aside id="rightList" className='col-sm-4 col-md-4 col-lg-' style={this.state.leftListStyle}>
                 <BloggerName bloggerInfo={this.state.bloggerInfo}/>
                 <ListElement listCategories={this.state.listCategories}/>
-                {/*<Label labelArr={this.state.labelArr}/>*/}
             </aside>
         );
     };
