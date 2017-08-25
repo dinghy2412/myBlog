@@ -1,6 +1,13 @@
 //html, body, #app, #box, #main, #homeBox {
 //    height: 100%;
 //}
+html, body, #myApp, #app{
+    min-height: 100vh;
+}
+
+#main {
+    min-height: calc(100vh - 32px);
+}
 
 #homeBox {
     position: fixed;
@@ -14,10 +21,6 @@ body {
     background: none #ededef repeat left top;
     font-family: -apple-system, SF UI Text, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;
 
-}
-
-#app {
-    padding: 32px 0;
 }
 
 #box {

@@ -13,7 +13,7 @@ class App extends React.Component {
     render () {
         return (
             <Router history={HashHistory}>
-                <div>
+                <div id="app">
                     <Route path="/" component={Header}></Route>
                     <Route exact strict path="/" component={Home}></Route>
                     <div id="main" className="clearfix">
