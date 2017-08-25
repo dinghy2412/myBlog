@@ -97,7 +97,7 @@ class Home extends React.Component {
                 grabCursor : true,
                 effect : 'slide',
                 pagination : '.swiper-pagination',
-                paginationClickable :true
+                // paginationClickable :true
             });
     }
 }
