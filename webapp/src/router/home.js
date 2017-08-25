@@ -30,8 +30,8 @@ class Home extends React.Component {
                         <div className="swiper-slide">
                             <img src="http://on20i35c9.bkt.clouddn.com/banner/WechatIMG573.jpeg" alt=""/>
                         </div>
-                        <div className="swiper-pagination"></div>
                     </div>
+                    <div className="swiper-pagination"></div>
                 </section>
                 <section className="entranceBox">
                     <div className="work">
@@ -92,10 +92,10 @@ class Home extends React.Component {
 
     componentDidMount () {
             new Swiper('#banner', {
-                autoplay : 5000,
-                loop : true,
-                grabCursor : true,
-                effect : 'slide',
+                // autoplay : 5000,
+                // loop : true,
+                // grabCursor : true,
+                // effect : 'fade',
                 pagination : '.swiper-pagination',
                 // paginationClickable :true
             });
