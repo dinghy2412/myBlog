@@ -8,7 +8,7 @@ class Footer extends React.Component {
     render () {
         return (
             <footer id="footer">
-                <a href="https://www.miitbeian.gov.cn/">京ICP备17048665号</a>
+                {/*<a href="http://www.miitbeian.gov.cn/">京ICP备17048665号</a>*/}
             </footer>
         )
     }

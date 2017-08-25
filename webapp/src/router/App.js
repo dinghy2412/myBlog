@@ -16,13 +16,13 @@ class App extends React.Component {
                 <div id="app">
                     <Route path="/" component={Header}></Route>
                     <Route exact strict path="/" component={Home}></Route>
-                    <div id="main" className="clearfix">
-                        <Switch>
-                            <Route path="/:path" component={LeftList}></Route>
-                        </Switch>
-                        <Route path="/:path" component={RightList}/>
-                    </div>
-                    <Route path="/:path" component={Footer}/>
+                    {/*<div id="main" className="clearfix">*/}
+                        {/*<Switch>*/}
+                            {/*<Route path="/:path" component={LeftList}></Route>*/}
+                        {/*</Switch>*/}
+                        {/*<Route path="/:path" component={RightList}/>*/}
+                    {/*</div>*/}
+                    {/*<Route path="/:path" component={Footer}/>*/}
                 </div>
             </Router>
         );
