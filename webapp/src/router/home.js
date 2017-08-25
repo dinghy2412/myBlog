@@ -89,12 +89,12 @@ class Home extends React.Component {
 
     componentDidMount () {
             new Swiper('#banner', {
-                // autoplay : 5000,
-                // loop : true,
-                // grabCursor : true,
-                // effect : 'fade',
+                autoplay : 5000,
+                loop : true,
+                grabCursor : true,
+                effect : 'fade',
                 pagination : '.swiper-pagination',
-                // paginationClickable :true
+                paginationClickable :true
             });
     }
 }
