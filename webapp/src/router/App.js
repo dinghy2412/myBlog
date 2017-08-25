@@ -14,8 +14,8 @@ class App extends React.Component {
         return (
             <Router history={HashHistory}>
                 <div id="app">
-                    <Route path="/" component={Header}></Route>
-                    <Route exact strict path="/" component={Home}></Route>
+                    {/*<Route path="/" component={Header}></Route>*/}
+                    {/*<Route exact strict path="/" component={Home}></Route>*/}
                     {/*<div id="main" className="clearfix">*/}
                         {/*<Switch>*/}
                             {/*<Route path="/:path" component={LeftList}></Route>*/}
