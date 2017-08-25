@@ -47,7 +47,7 @@ class Home extends React.Component {
                             <div className="title">life</div>
                         </Link>
                     </div>
-                    <div className="msg">
+                    <div className="guestbook">
                         <Link className="centerBox" to="Guestbook">
                             <svg className="icon" aria-hidden="true">
                                 <use xlinkHref="#icon-liuyan"></use>

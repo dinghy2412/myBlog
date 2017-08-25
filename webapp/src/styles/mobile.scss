@@ -16,4 +16,70 @@
             }
         }
     }
+
+    header, footer {
+        display: none;
+    }
+    #main {
+        //min-height: 100vh;
+        padding: 0;
+    }
+    #rightList {
+        display: none;
+    }
+
+    #leftList {
+        padding: 0;
+        .articleBox {
+            margin-bottom: 20px;
+        }
+    }
+
+    #homeBox {
+        top: 0;
+
+        section#banner {
+            height: 32%;
+        }
+
+        section.entranceBox {
+            height: 68%;
+            .work, .life, .guestbook, .aboutMe {
+                width: 100% !important;
+                height: 17vh !important;
+                float: none !important;
+                border-right: none;
+                border-bottom: 1px solid #fff;
+            }
+
+            .work, .life, .guestbook {
+                .icon {
+                    margin: 0 auto 10px !important;
+                }
+            }
+
+            .aboutMe {
+                .weixin, .weibo {
+                    display: none !important;
+                }
+            }
+
+            .aboutMe {
+                .centerBoxLast {
+                    height: 100%;
+                    padding-top: 2vh;
+                    .title {
+                        height: 5vh;
+                        text-align: center;
+                    }
+
+                    .phoneNum, .eMail {
+                        height: 5vh;
+                        margin-top: 0;
+                        float: left;
+                    }
+                }
+            }
+        }
+    }
 }
