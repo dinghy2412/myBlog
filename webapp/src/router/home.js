@@ -12,13 +12,16 @@ class Home extends React.Component {
 
     state = {
         imgUrl : "?imageslim"
-    }
+    };
 
     render () {
         return (
             <section id="homeBox">
                 <section id="banner">
                     <div className="swiper-wrapper">
+                        <div className="swiper-slide">
+                            <img src={"//img.dinghyu.com/banner/WechatIMG598.jpeg" + this.state.imgUrl} alt=""/>
+                        </div>
                         <div className="swiper-slide">
                             <img src={"//img.dinghyu.com/banner/panoramic_landscapes-097.jpg" + this.state.imgUrl} alt=""/>
                         </div>
