@@ -5,6 +5,13 @@ import Footer from '../router/footer'
 class Home extends React.Component {
     constructor (props) {
         super(props)
+        if (window.screen.width < 768) {
+            this.state.imgUrl = "?imageView2/0/w/750"
+        }
+    }
+
+    state = {
+        imgUrl : "?imageslim"
     }
 
     render () {
@@ -13,19 +20,19 @@ class Home extends React.Component {
                 <section id="banner">
                     <div className="swiper-wrapper">
                         <div className="swiper-slide">
-                            <img src="//img.dinghyu.com/banner/panoramic_landscapes-097.jpg" alt=""/>
+                            <img src={"//img.dinghyu.com/banner/panoramic_landscapes-097.jpg" + this.state.imgUrl} alt=""/>
                         </div>
                         <div className="swiper-slide">
-                            <img src="//img.dinghyu.com/banner/panoramic_landscapes-093.jpg" alt=""/>
+                            <img src={"//img.dinghyu.com/banner/panoramic_landscapes-093.jpg" + this.state.imgUrl} alt=""/>
                         </div>
                         <div className="swiper-slide">
-                            <img src="//img.dinghyu.com/banner/panoramic_landscapes-088.jpg" alt=""/>
+                            <img src={"//img.dinghyu.com/banner/panoramic_landscapes-088.jpg" + this.state.imgUrl} alt=""/>
                         </div>
                         <div className="swiper-slide">
-                            <img src="//img.dinghyu.com/banner/panoramic_landscapes-100.jpg" alt=""/>
+                            <img src={"//img.dinghyu.com/banner/panoramic_landscapes-100.jpg" + this.state.imgUrl} alt=""/>
                         </div>
                         <div className="swiper-slide">
-                            <img src="//img.dinghyu.com/banner/panoramic_landscapes-099.jpg" alt=""/>
+                            <img src={"//img.dinghyu.com/banner/panoramic_landscapes-099.jpg" + this.state.imgUrl} alt=""/>
                         </div>
                     </div>
                     <div className="swiper-pagination"></div>
