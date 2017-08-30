@@ -37,7 +37,7 @@
 
     #homeBox {
         height: 100vh;
-        min-height: 560px;
+        min-height: 580px;
         padding-top: 0;
 
         section#banner {
@@ -50,7 +50,7 @@
             .work, .life, .guestbook, .aboutMe {
                 width: 100% !important;
                 height: 17vh !important;
-                min-height: 90px;
+                min-height: 95px;
                 float: none !important;
                 border-right: none;
                 border-bottom: 1px solid #fff;
@@ -69,7 +69,7 @@
             }
 
             .aboutMe {
-                min-height: 110px;
+                min-height: 115px;
                 .centerBoxLast {
                     height: 100%;
                     padding-top: 20px;
