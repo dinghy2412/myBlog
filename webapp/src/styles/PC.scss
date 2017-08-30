@@ -1,5 +1,5 @@
 html, body, #myApp, #app {
-    min-height: 100vh;
+    min-height: 100%;
 }
 
 #main, #aboutMe, #homeBox {
@@ -198,7 +198,6 @@ header {
     .infoBox {
         height: calc(100vh - 64px);
         min-height: 360px;
-        background: url("//img.dinghyu.com/20990657_1368686545127.jpg?imageslim") no-repeat;
         background-size: 100% 100%;
 
         .wxBox {

@@ -37,12 +37,12 @@
 
     #homeBox {
         height: 100vh;
-        min-height: 580px;
+        min-height: 575px;
         padding-top: 0;
 
         section#banner {
             height: 32%;
-            min-height: 180px;
+            min-height: 213px;
         }
 
         section.entranceBox {
@@ -69,10 +69,14 @@
             }
 
             .aboutMe {
-                min-height: 115px;
                 .centerBoxLast {
-                    height: 100%;
-                    padding-top: 20px;
+                    margin: auto;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    height: 80px;
                     .title {
                         line-height: 20px;
                         margin: 0;
