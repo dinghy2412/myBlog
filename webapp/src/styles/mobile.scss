@@ -21,7 +21,6 @@
         display: none;
     }
     #main {
-        //min-height: 100vh;
         padding: 0;
     }
     #rightList {
@@ -31,7 +30,8 @@
     #leftList {
         padding: 0;
         .articleBox {
-            margin-bottom: 20px;
+            margin-bottom: 10px;
+            border-radius: 0;
         }
     }
 
