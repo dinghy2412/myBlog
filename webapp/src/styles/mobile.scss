@@ -37,11 +37,12 @@
 
     #homeBox {
         height: 100vh;
-        min-height: 565px;
+        min-height: 560px;
         padding-top: 0;
 
         section#banner {
             height: 32%;
+            min-height: 180px;
         }
 
         section.entranceBox {

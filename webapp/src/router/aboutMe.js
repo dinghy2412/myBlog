@@ -5,8 +5,7 @@ import Footer from '../router/footer'
 
 class AboutMe extends React.Component {
     constructor (props) {
-        super(props)
-
+        super(props);
     }
 
     render () {
