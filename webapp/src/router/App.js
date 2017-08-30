@@ -3,11 +3,10 @@
  */
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch, HashHistory} from 'react-router-dom'
-import LeftList from '../router/leftList'
-import RightList from '../router/rightList'
+import ArticleBox from '../router/articleBox'
 import Header from '../router/header'
 import Home from '../router/home'
-import Footer from '../router/footer'
+import AboutMe from '../router/aboutMe'
 
 class App extends React.Component {
     render () {
@@ -15,14 +14,12 @@ class App extends React.Component {
             <Router history={HashHistory}>
                 <div id="app">
                     <Route path="/" component={Header}></Route>
-                    <Route exact strict path="/" component={Home}></Route>
-                    <div id="main" className="clearfix">
-                        <Switch>
-                            <Route path="/:path" component={LeftList}></Route>
-                        </Switch>
-                        <Route path="/:path" component={RightList}/>
-                    </div>
-                    <Route path="/:path" component={Footer}/>
+
+                    <Switch>
+                        <Route exact strict path="/" component={Home}></Route>
+                        <Route exact strict path="/AboutMe" component={AboutMe}></Route>
+                        <Route path="/:path" component={ArticleBox}></Route>
+                    </Switch>
                 </div>
             </Router>
         );

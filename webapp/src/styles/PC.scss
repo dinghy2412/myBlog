@@ -2,7 +2,7 @@ html, body, #myApp, #app {
     min-height: 100vh;
 }
 
-#main {
+#main, #aboutMe, #homeBox {
     min-height: calc(100vh - 32px);
 }
 
@@ -39,14 +39,25 @@ header {
     z-index: 99;
 
     .headerBox {
+        height: 32px;
         max-width: 1280px;
         margin: 0 auto;
         font-style: italic;
+        position: relative;
 
-        svg {
+        svg.icon {
             font-size: 80px;
             color: #fff;
             margin-top: -24px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        @media screen and (max-width: 1380px) {
+            svg.icon {
+                left: 100px;
+            }
         }
 
         iframe {
@@ -54,31 +65,21 @@ header {
             margin-top: -10px;
             float: right;
         }
-    }
-    @media screen and (max-width: 1380px) {
-        .headerBox {
-            padding-left: 100px;
-        }
-    }
 
+    }
 }
 
 /*
     home
  */
 #homeBox {
-    position: fixed;
-    top: 32px;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 10;
+    padding-top: 32px;
     /*
 		banner
 	 */
     section#banner {
         width: 100%;
-        height: 60%;
+        height: calc(100vh - 210px);
         overflow: hidden;
         //background-color: #000;
         position: relative;
@@ -97,7 +98,8 @@ header {
 
     section.entranceBox {
         width: 100%;
-        height: calc(40% - 32px);
+        height: 146px;
+        min-height: 146px;
         background-color: #f3f3f3;
         position: relative;
         a.centerBox {
@@ -153,7 +155,8 @@ header {
             div.title {
                 font-size: 20px;
                 color: #868686;
-                text-align: left;
+                text-align: center;
+                margin-top: 9px;
             }
             div.eMail, div.phoneNum {
                 line-height: 20px;
@@ -165,6 +168,11 @@ header {
                     margin-right: 10px;
                 }
             }
+
+            div.eMail {
+                padding-top: 20px;
+            }
+
             .weixin, .weibo {
                 font-size: 40px;
                 display: inline;
@@ -181,6 +189,43 @@ header {
 
 }
 
+/*
+    aboutMe
+ */
+
+#aboutMe {
+    padding-top: 32px;
+    .infoBox {
+        height: calc(100vh - 64px);
+        min-height: 360px;
+        background: url("//img.dinghyu.com/20990657_1368686545127.jpg?imageslim") no-repeat;
+        background-size: 100% 100%;
+
+        .wxBox {
+            width: 30%;
+            min-width: 150px;
+            text-align: center;
+            overflow:hidden;
+            margin-left: 10%;
+            padding-top: calc(45vh - 212px);
+            color: #fff;
+            .wxIcon {
+                width: 100px;
+                height: 100px;
+                margin: 20px 0 20px calc(50% - 50px);
+            }
+
+            .wxQrCode {
+                width: 150px;
+                height: 150px;
+                margin-top: 50px;
+                margin-left: calc(50% - 75px);
+                border-radius: 10px;
+            }
+        }
+
+    }
+}
 
 /*
     footer
@@ -192,6 +237,7 @@ header {
     line-height: 32px;
     text-align: center;
     background-color: #e6e6e6;
+    clear: both;
     a {
         color: #333;
     }

@@ -36,7 +36,9 @@
     }
 
     #homeBox {
-        top: 0;
+        height: 100vh;
+        min-height: 565px;
+        padding-top: 0;
 
         section#banner {
             height: 32%;
@@ -47,6 +49,7 @@
             .work, .life, .guestbook, .aboutMe {
                 width: 100% !important;
                 height: 17vh !important;
+                min-height: 90px;
                 float: none !important;
                 border-right: none;
                 border-bottom: 1px solid #fff;
@@ -65,21 +68,37 @@
             }
 
             .aboutMe {
+                min-height: 110px;
                 .centerBoxLast {
                     height: 100%;
-                    padding-top: 2vh;
+                    padding-top: 20px;
                     .title {
-                        height: 5vh;
+                        line-height: 20px;
+                        margin: 0;
                         text-align: center;
                     }
 
                     .phoneNum, .eMail {
-                        height: 5vh;
+                        line-height: 30px;
+
                         margin-top: 0;
-                        float: left;
+                        float: none;
+                    }
+
+                    div.eMail {
+                        padding-top: 0;
                     }
                 }
             }
+        }
+    }
+
+    #aboutMe {
+        padding: 0;
+        height: 100vh;
+        .infoBox {
+            height: 100vh;
+            background-size: cover;
         }
     }
 }

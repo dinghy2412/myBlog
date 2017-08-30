@@ -3,14 +3,14 @@
  */
 
 import React from 'react';
-import ArticlePreview from '../components/articlePreview'
+import ArticlePreview from './articlePreview'
 
 class LeftList extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
             article : [],
-            path : this.props.match.params.path
+            path : this.props.menuType
         };
     }
 
@@ -58,16 +58,15 @@ class LeftList extends React.Component {
     }
 
     componentDidMount () {
-        this.loadlists(this.props.match.params.path);
+        this.loadlists(this.props.menuType);
     }
 
     componentDidUpdate () {
-        if (this.state.path !== this.props.match.params.path) {
-            this.loadlists(this.props.match.params.path);
+        if (this.state.path !== this.props.menuType) {
+            this.loadlists(this.props.menuType);
             this.setState({
-                path : this.props.match.params.path
+                path : this.props.menuType
             });
-
             window.scrollTo(0, 0)
         }
     }

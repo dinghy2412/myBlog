@@ -2,9 +2,9 @@
  * Created by songguo on 2017/7/11.
  */
 import React from 'react';
-import ListElement from '../components/ListELement'
-import BloggerName from '../components/BloggerName'
-import Label from '../components/Label'
+import ListElement from './ListELement'
+import BloggerName from './BloggerName'
+import Label from './Label'
 
 class RightList extends React.Component {
     constructor(props) {
@@ -52,7 +52,7 @@ class RightList extends React.Component {
         return (
             <aside id="rightList" className='col-sm-4 col-md-4 col-lg-' style={this.state.leftListStyle}>
                 <BloggerName bloggerInfo={this.state.bloggerInfo}/>
-                <ListElement listCategories={this.state.listCategories}/>
+                <ListElement listCategories={this.state.listCategories} menuType={this.props.menuType}/>
             </aside>
         );
     };

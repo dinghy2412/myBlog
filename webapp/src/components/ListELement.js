@@ -5,16 +5,24 @@ import React from 'react';
 import {Link} from 'react-router-dom'
 
 class ListElement extends React.Component {
-    render() {
+    render () {
         return (
             <ul>
                 {
-                    this.props.listCategories.map(function (ele) {
-                        return <li key={ele.text}><Link to={`/${ele.link}`}>{ele.text}</Link></li>;
+                    this.props.listCategories.map((ele) => {
+                        var style = {};
+                        if (ele.text === this.props.menuType) {
+                            style = {
+                                fontSize : "17px",
+                                fontWeight : "bold"
+                            }
+                        }
+                        return <li key={ele.text} style={style}><Link to={`/${ele.link}`}>{ele.text}</Link></li>;
                     })
                 }
             </ul>
         );
     }
 }
+
 export default ListElement

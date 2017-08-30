@@ -11,8 +11,18 @@ class Home extends React.Component {
     }
 
     state = {
-        imgUrl : "?imageslim"
+        imgUrl : "?imageslim",
+        wxQrCodeFlag : false,
+        weiboQrCodeFlag : false
     };
+
+    weixinQrCode () {
+        this.state.wxQrCodeFlag = true
+    }
+
+    weiboQrCode () {
+        this.state.weiboQrCodeFlag = true
+    }
 
     render () {
         return (
@@ -23,19 +33,24 @@ class Home extends React.Component {
                             <img src={"//img.dinghyu.com/banner/WechatIMG598.jpeg" + this.state.imgUrl} alt=""/>
                         </div>
                         <div className="swiper-slide">
-                            <img src={"//img.dinghyu.com/banner/panoramic_landscapes-097.jpg" + this.state.imgUrl} alt=""/>
+                            <img src={"//img.dinghyu.com/banner/panoramic_landscapes-097.jpg" + this.state.imgUrl}
+                                 alt=""/>
                         </div>
                         <div className="swiper-slide">
-                            <img src={"//img.dinghyu.com/banner/panoramic_landscapes-093.jpg" + this.state.imgUrl} alt=""/>
+                            <img src={"//img.dinghyu.com/banner/panoramic_landscapes-093.jpg" + this.state.imgUrl}
+                                 alt=""/>
                         </div>
                         <div className="swiper-slide">
-                            <img src={"//img.dinghyu.com/banner/panoramic_landscapes-088.jpg" + this.state.imgUrl} alt=""/>
+                            <img src={"//img.dinghyu.com/banner/panoramic_landscapes-088.jpg" + this.state.imgUrl}
+                                 alt=""/>
                         </div>
                         <div className="swiper-slide">
-                            <img src={"//img.dinghyu.com/banner/panoramic_landscapes-100.jpg" + this.state.imgUrl} alt=""/>
+                            <img src={"//img.dinghyu.com/banner/panoramic_landscapes-100.jpg" + this.state.imgUrl}
+                                 alt=""/>
                         </div>
                         <div className="swiper-slide">
-                            <img src={"//img.dinghyu.com/banner/panoramic_landscapes-099.jpg" + this.state.imgUrl} alt=""/>
+                            <img src={"//img.dinghyu.com/banner/panoramic_landscapes-099.jpg" + this.state.imgUrl}
+                                 alt=""/>
                         </div>
                     </div>
                     <div className="swiper-pagination"></div>
@@ -54,7 +69,7 @@ class Home extends React.Component {
                             <svg className="icon" aria-hidden="true">
                                 <use xlinkHref="#icon-shenghuo"></use>
                             </svg>
-                            <div className="title">life</div>
+                            <div className="title">Life</div>
                         </Link>
                     </div>
                     <div className="guestbook">
@@ -66,10 +81,7 @@ class Home extends React.Component {
                         </Link>
                     </div>
                     <div className="aboutMe">
-                        <div className="centerBoxLast">
-                            <div className="title">
-                                About Me
-                            </div>
+                        <Link className="centerBoxLast" to="AboutMe">
                             <div className="eMail">
                                 <svg className="icon" aria-hidden="true">
                                     <use xlinkHref="#icon-youjian"></use>
@@ -82,14 +94,22 @@ class Home extends React.Component {
                                 </svg>
                                 18519268528
                             </div>
-                            <svg className="icon weixin" aria-hidden="true">
-                                <use xlinkHref="#icon-wechat"></use>
-                            </svg>
+                            <div className="title">
+                                About Me
+                            </div>
 
-                            <svg className="icon weibo" aria-hidden="true">
-                                <use xlinkHref="#icon-weibo"></use>
-                            </svg>
-                        </div>
+                            {/*<Link to="AboutMe">*/}
+                                {/*<svg className="icon weixin" aria-hidden="true" onClick={this.weixinQrCode}>*/}
+                                    {/*<use xlinkHref="#icon-wechat"></use>*/}
+                                {/*</svg>*/}
+                            {/*</Link>*/}
+
+                            {/*<Link to="AboutMe">*/}
+                                {/*<svg className="icon weibo" aria-hidden="true">*/}
+                                    {/*<use xlinkHref="#icon-weibo"></use>*/}
+                                {/*</svg>*/}
+                            {/*</Link>*/}
+                        </Link>
                     </div>
                 </section>
                 <Footer/>
@@ -98,14 +118,14 @@ class Home extends React.Component {
     }
 
     componentDidMount () {
-            new Swiper('#banner', {
-                autoplay : 5000,
-                loop : true,
-                grabCursor : true,
-                effect : 'fade',
-                pagination : '.swiper-pagination',
-                paginationClickable :true
-            });
+        new Swiper('#banner', {
+            autoplay : 5000,
+            loop : true,
+            grabCursor : true,
+            effect : 'fade',
+            pagination : '.swiper-pagination',
+            paginationClickable : true
+        });
     }
 }
 
