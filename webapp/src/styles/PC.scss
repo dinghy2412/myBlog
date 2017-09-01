@@ -431,7 +431,7 @@ header {
     }
 }
 
-body > a:last-child {
+script+a {
     display: none;
 }
 
