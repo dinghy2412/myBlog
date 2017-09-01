@@ -12,8 +12,8 @@ body {
 
 }
 
-#box {
-
+script+a {
+    display: none;
 }
 
 #main {
@@ -227,6 +227,68 @@ header {
 }
 
 /*
+    评论
+ */
+
+#guestbookList {
+    .guestbook {
+        padding: 20px 20px 30px;
+        background-color: #fff;
+        border-bottom: 1px solid #ededef;
+        .userInfo {
+            .headImg {
+                width: 50px;
+                height: 50px;
+                border-radius: 25px;
+            }
+
+            .nickName {
+                line-height: 50px;
+                padding-left: 20px;
+            }
+
+            .reply {
+                padding-left: 5px;
+                line-height: 50px;
+                span {
+                    color: #8590a6;
+                    margin-right: 5px;
+                }
+            }
+
+            .commentTime {
+                line-height: 50px;
+            }
+        }
+
+        .comment {
+            padding: 20px 0 0 70px;
+        }
+    }
+}
+
+#PostComment {
+    background-color: #fff;
+    padding: 20px;
+
+    .title {
+        line-height: 30px;
+    }
+
+    .comment {
+        width: 100%;
+        padding: 10px;
+        line-height: 30px;
+        font-size: 15px;
+    }
+
+    button {
+        margin-top: 20px;
+    }
+}
+
+
+/*
     footer
  */
 
@@ -431,9 +493,6 @@ header {
     }
 }
 
-script+a {
-    display: none;
-}
 
 
 
