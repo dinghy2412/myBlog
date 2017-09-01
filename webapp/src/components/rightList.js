@@ -20,10 +20,6 @@ class RightList extends React.Component {
                     "link": ""
                 },
                 {
-                    "text": "All",
-                    "link": "All"
-                },
-                {
                     "text": "Code",
                     "link": "Code"
                 },

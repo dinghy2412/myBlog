@@ -4,7 +4,6 @@
 
 import React from 'react';
 import ArticlePreview from './articlePreview'
-import Guestbook from './guestbook'
 
 class LeftList extends React.Component {
     constructor (props) {
@@ -16,7 +15,7 @@ class LeftList extends React.Component {
     }
 
     loadlists (menuType) {
-        let url = menuType !== "All" ? `/api/v1/articleList?menuType=${menuType}` : '/api/v1/articleList';
+        let url = menuType ? `/api/v1/articleList?menuType=${menuType}` : '/api/v1/articleList';
         this.setState({
             loading : true
         });
@@ -44,12 +43,10 @@ class LeftList extends React.Component {
                 <div className="dot2"></div>
             </div>
         } else {
-            if (this.state.path === "Guestbook") {
-                HTMLtags = <Guestbook/>
+            if (this.state.article.length) {
 
-            } else if (this.state.article.length) {
                 HTMLtags = <ArticlePreview article={this.state.article}/>
-            }  else {
+            } else {
                 HTMLtags = <div>暂无内容</div>
             }
         }
@@ -61,18 +58,12 @@ class LeftList extends React.Component {
     }
 
     componentDidMount () {
-
-        if (this.props.menuType !== "Guestbook") {
-            this.loadlists(this.props.menuType);
-        }
-
+        this.loadlists(this.props.menuType);
     }
 
     componentDidUpdate () {
         if (this.state.path !== this.props.menuType) {
-            if (this.props.menuType !== "Guestbook") {
-                this.loadlists(this.props.menuType);
-            }
+            this.loadlists(this.props.menuType);
             this.setState({
                 path : this.props.menuType
             });
