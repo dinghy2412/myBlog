@@ -17,7 +17,7 @@ router.get('/articleList', function (req, res, next) {
                 as : "author",
                 attributes : {exclude : ['authorId']}
             }],
-            order : "id DESC",
+            order : [['id', 'DESC']],
             logging : true
         };
     if (menuType) {
