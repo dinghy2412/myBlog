@@ -22,6 +22,9 @@ router.get('/articleList', function (req, res, next) {
         };
     if (menuType) {
         findAllObj.where = {
+            // tags : {
+            //     $like : '%3%'
+            // },
             menuType : menuType
         }
     }
