@@ -17,13 +17,11 @@ router.get('/articleList', function (req, res, next) {
                 as : "author",
                 attributes : {exclude : ['authorId']}
             }],
+            order : "id DESC",
             logging : true
         };
     if (menuType) {
         findAllObj.where = {
-            // tags : {
-            //     $like : '%3%'
-            // },
             menuType : menuType
         }
     }

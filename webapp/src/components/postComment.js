@@ -11,7 +11,8 @@ class PostComment extends React.Component {
     state = {
         name : "",
         email : "",
-        other : ""
+        other : "",
+        replyCommentId : ""
     };
 
     PostCommetnName (event) {
@@ -29,10 +30,12 @@ class PostComment extends React.Component {
     sendComment () {
         var url = "",
             data = {
-
+                name : this.state.name,
+                email : this.state.email,
+                other : this.state.other,
+                replyCommentId : this.state.replyCommentId
             };
-        fetch(url,
-            {
+        fetch(url, {
                 method : "POST",
                 body: JSON.stringify(data)
             }).then((res) => {
