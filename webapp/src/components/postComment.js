@@ -3,38 +3,46 @@ import React from 'react';
 class PostComment extends React.Component {
     constructor (prop) {
         super(prop)
-        this.PostCommetnName = this.PostCommetnName.bind(this);
-        this.PostCommetnEmail = this.PostCommetnEmail.bind(this);
-        this.PostCommetnOther = this.PostCommetnOther.bind(this);
+        this.PostComment = this.PostComment.bind(this);
+        this.PostCommentName = this.PostCommentName.bind(this);
+        this.PostCommentPhoneNum = this.PostCommentPhoneNum.bind(this);
+        this.PostCommentOther = this.PostCommentOther.bind(this);
+        this.sendComment = this.sendComment.bind(this);
     }
 
     state = {
+        comment : "",
         name : "",
-        email : "",
+        PhoneNum : "",
         other : "",
         replyCommentId : ""
     };
 
-    PostCommetnName (event) {
-        this.setState({PostCommetnName: event.target.value});
+    PostComment (event) {
+        this.setState({comment: event.target.value});
     }
 
-    PostCommetnEmail (event) {
-        this.setState({PostCommetnEmail: event.target.value});
+    PostCommentName (event) {
+        this.setState({name: event.target.value});
     }
 
-    PostCommetnOther (event) {
-        this.setState({PostCommetnOther: event.target.value});
+    PostCommentPhoneNum (event) {
+        this.setState({PhoneNum: event.target.value});
+    }
+
+    PostCommentOther (event) {
+        this.setState({other: event.target.value});
     }
 
     sendComment () {
         var url = "",
             data = {
                 name : this.state.name,
-                email : this.state.email,
+                PhoneNum : this.state.PhoneNum,
                 other : this.state.other,
                 replyCommentId : this.state.replyCommentId
             };
+        console.log(data);
         fetch(url, {
                 method : "POST",
                 body: JSON.stringify(data)
@@ -55,19 +63,20 @@ class PostComment extends React.Component {
     }
 
     render () {
-        var name = this.state.name,
-            email = this.state.email,
+        var comment = this.state.comment,
+            name = this.state.name,
+            PhoneNum = this.state.PhoneNum,
             other = this.state.other;
         return (
             <div id="PostComment" className="clearfix">
                 <div className="title">留个脚印吧...</div>
-                <textarea className="comment form-control" name="" id="" cols="30" rows="6"></textarea>
-                <div className="title">姓名or昵称</div>
-                <input type="text" className="name form-control" value={name || ""} onChange={this.PostCommetnName}/>
-                <div className="title">Email</div>
-                <input type="email" className="Email form-control" value={email || ""} onChange={this.PostCommetnEmail}/>
-                <div className="title">other</div>
-                <input type="text" className="other form-control" value={other || ""} onChange={this.PostCommetnOther}/>
+                <textarea className="comment form-control" name="" id="" cols="30" rows="6" value={comment || ""} onChange={this.PostComment}></textarea>
+                <div className="title">Name</div>
+                <input type="text" className="name form-control" value={name || ""} onChange={this.PostCommentName}/>
+                <div className="title">Phone number</div>
+                <input type="number" className="PhoneNum form-control" value={PhoneNum || ""} onChange={this.PostCommentPhoneNum}/>
+                <div className="title">Other</div>
+                <input type="text" className="other form-control" value={other || ""} onChange={this.PostCommentOther}/>
                 <button className="btn btn-primary btn-block" onClick={this.sendComment}>发送</button>
             </div>
         )
