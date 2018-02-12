@@ -4,12 +4,15 @@
 const express       = require('express');
 const articleRoutes = require('./routes/article');
 const userRoutes    = require('./routes/user');
+const baifu    		= require('./routes/baifu');
 
 const app = express();
 
 app.use('/api/v1', articleRoutes);
 
 app.use('/api/v1', userRoutes);
+
+app.use('/api/v1', baifu);
 
 var server = app.listen(8080, 'localhost', function () {
 	var host = server.address().address;
