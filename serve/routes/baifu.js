@@ -9,7 +9,7 @@ router.get('/baifu/WXJSSDK', function (req1, ress, next) {
         mothed : "openapi.Wechatapp.getJsSdkConfig",
         secret : "aeddb9614bcec9aadbab466bfbade164",
         timestamp : Math.floor(Date.parse(new Date()) / 1000),
-        url : req1.query.url
+        url : encodeURI(req1.query.url)
     };
 
     var str = "";
