@@ -7,7 +7,7 @@ const User        = require('../models').User;
 const querystring = require('querystring');
 const util        = require('util');
 const responseFn = require('../tools/responseFn');
-
+const md5=require("md5");
 
 //查询指定用户
 router.get('/user', function (req, res, next) {
@@ -53,3 +53,5 @@ router.post('/user', function (req, res, next) {
 });
 
 module.exports = router;
+
+
