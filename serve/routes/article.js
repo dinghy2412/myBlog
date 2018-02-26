@@ -54,7 +54,7 @@ router.post('/article', function (req, res, next) {
     // 在end事件触发后，通过querystring.parse将post解析为真正的POST请求格式，然后向客户端返回。
     req.on('end', function () {
         postData = JSON.parse(postData);
-        var tokenFlag = permission(patchData.token);
+        var tokenFlag = permission(postData.token);
 
         if (postData.title && postData.HTML && postData.menuType && postData.authorId && tokenFlag) {
             Article.create(postData).then((result) => {
@@ -82,14 +82,21 @@ router.patch('/article', (req, res, next) => {
         patchData = JSON.parse(patchData);
         var tokenFlag = permission(patchData.token);
         var articleId = patchData.articleId;
+        var silent = patchData.silent;
         delete patchData.articleId;
+        delete patchData.silent;
         if (articleId && tokenFlag) {
             Article.update(
                 patchData, {
-                    'where' : {'id' : articleId}
+                    'where' : {'id' : articleId},
+                    'silent' : silent ? silent : false
                 }
             ).then(result => {
                 Article.findById(articleId).then(result => {
+                    if (!result) {
+                        responseFn(res, {}, "00400", 'Not found', 'PATCH');
+                        return
+                    }
                     var response = result.dataValues;
                     responseFn(res, response, undefined, undefined, 'PATCH')
                 })

@@ -24,7 +24,7 @@ module.exports = (token) => {
     } catch (e) {
         result = null;
     }
-    return token.length === 32 ? result === data : false
+    return token && token.length === 32 ? result === data : false
 };
 
 
