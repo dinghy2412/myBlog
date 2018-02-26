@@ -11,9 +11,14 @@ module.exports = function (sequelize, DataTypes) {
 			tags : {
 				type : DataTypes.STRING,
                 charset : "utf8",
+                allowNull : true,
                 get : function () {
-					const tags = JSON.parse(this.getDataValue('tags'));
-					return tags
+					try {
+                        const tags = JSON.parse(this.getDataValue('tags'));
+                        return tags;
+					} catch (e) {
+						// console.log(e)
+					}
 				},
 				set : function (tags) {
 					return this.setDataValue('tags', JSON.stringify(tags))
