@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>select</title>
+    <style>
+        body, html {
+            padding: 0;
+            margin: 0;
+        }
+
+        #main {
+            overflow: hidden;
+            padding: 10px;
+        }
+
+        .answer {
+            width: 600px;
+            margin: 0 auto;
+        }
+
+        .answer select {
+            width: 180px;
+        }
+
+        .form-control {
+            display: block;
+            width: 100%;
+            height: 34px;
+            padding: 6px 12px;
+            margin-bottom: 10px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+            -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+        }
+
+        .btn {
+            color: #333;
+            background-color: #fff;
+            border-color: #ccc;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            display: inline-block;
+            padding: 6px 12px;
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.42857143;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-image: none;
+            border-radius: 4px;
+        }
+
+        ._3Hc8o {
+            width: 100%;
+            word-wrap: break-word;
+            color: inherit;
+        }
+
+        pre {
+            word-wrap: normal;
+            word-break: break-all;
+            white-space: pre;
+            overflow: auto;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #d9d9d9;
+            border-radius: 0;
+            line-height: 20px;
+            background-color: #f2f2f2;
+        }
+
+        code {
+            padding: 0;
+            background-color: transparent;
+            white-space: pre;
+            border: none;
+            color: #657b83;
+            font-size: 12px;
+            display: block;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div id="main">
+    <header>
+        <a href="https://www.dinghyu.com/shanyin/table.html">题1:数组</a>
+        <a href="https://www.dinghyu.com/shanyin/select_jQuery.html">题2:select-jQuery</a>
+        <a href="https://www.dinghyu.com/shanyin/select_vue.html">题2:select-vue</a>
+        <a href="https://s1.ax2x.com/2018/03/08/Ch7nK.png">题目IMG</a>
+    </header>
+
+    <div class="answer">
+
+    </div>
+    <button class="addSelect btn">添加一个select</button>
+
+    <section class="code">
+        <h1>code</h1>
+        <div class="note-view _3Hc8o"><pre><code class="hljs javascript"> $(() =&gt; {
+    <span class="hljs-keyword">var</span> select = $(<span class="hljs-string">'select'</span>),
+
+        <span class="hljs-comment">//默认已选值</span>
+        oSelected = {},
+
+        <span class="hljs-comment">//默认可选值</span>
+        hOptionList = [
+            <span class="hljs-string">`&lt;option value="-1"&gt;请选择&lt;/option&gt;`</span>,
+            <span class="hljs-string">`&lt;option value="1"&gt;1&lt;/option&gt;`</span>,
+            <span class="hljs-string">`&lt;option value="2"&gt;2&lt;/option&gt;`</span>,
+            <span class="hljs-string">`&lt;option value="3"&gt;3&lt;/option&gt;`</span>,
+            <span class="hljs-string">`&lt;option value="4"&gt;4&lt;/option&gt;`</span>,
+            <span class="hljs-string">`&lt;option value="5"&gt;5&lt;/option&gt;`</span>,
+            <span class="hljs-string">`&lt;option value="6"&gt;6&lt;/option&gt;`</span>,
+            <span class="hljs-string">`&lt;option value="7"&gt;7&lt;/option&gt;`</span>,
+            <span class="hljs-string">`&lt;option value="8"&gt;8&lt;/option&gt;`</span>,
+            <span class="hljs-string">`&lt;option value="9"&gt;9&lt;/option&gt;`</span>,
+            <span class="hljs-string">`&lt;option value="10"&gt;10&lt;/option&gt;`</span>,
+        ];
+
+    <span class="hljs-comment">/**
+     * 初始化已选值
+     */</span>
+    <span class="hljs-keyword">var</span> fnInitSelected = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+        select.each(<span class="hljs-function">(<span class="hljs-params">idx, ele</span>) =&gt;</span> {
+            <span class="hljs-keyword">if</span> (ele.id) {
+                oSelected[ele.id] = <span class="hljs-number">-1</span>
+            } <span class="hljs-keyword">else</span> {
+                <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'请为select标签创建id'</span>)
+            }
+        });
+    };
+
+    <span class="hljs-comment">/**
+     *
+     * @param event: 更改的select
+     * @desc select更改时触发
+     */</span>
+    <span class="hljs-keyword">var</span> fnSelectChange = <span class="hljs-function">(<span class="hljs-params">event</span>) =&gt;</span> {
+        <span class="hljs-keyword">var</span> sSelectId = event ? event.target.id: <span class="hljs-literal">null</span>;
+        <span class="hljs-keyword">if</span> (sSelectId) {
+            oSelected[sSelectId] = <span class="hljs-built_in">Number</span>($(<span class="hljs-string">'#'</span> + sSelectId).val());
+        }
+
+        <span class="hljs-comment">//清空select下的option</span>
+        fnClearOption();
+
+        <span class="hljs-comment">//为select添加option</span>
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; hOptionList.length; i++) {
+            <span class="hljs-keyword">var</span> id = fnContrastSelected(i);
+            <span class="hljs-keyword">if</span> (id) {
+                $(<span class="hljs-string">'#'</span> + id).append(hOptionList[i])
+            } <span class="hljs-keyword">else</span> {
+                select.each(<span class="hljs-function">(<span class="hljs-params">idx, ele</span>) =&gt;</span> {
+                    $(ele).append(hOptionList[i])
+                });
+            }
+        }
+
+        <span class="hljs-comment">//option渲染完毕 重新赋值</span>
+        select.each(<span class="hljs-function">(<span class="hljs-params">idx, ele</span>) =&gt;</span> {
+            $(ele).val(oSelected[ele.id])
+        });
+    };
+
+    <span class="hljs-comment">/**
+     * 清空select下的option
+     */</span>
+    <span class="hljs-keyword">var</span> fnClearOption = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+        select.each(<span class="hljs-function">(<span class="hljs-params">idx, ele</span>) =&gt;</span> {
+            $(ele).html(<span class="hljs-string">''</span>)
+        });
+    };
+
+
+    <span class="hljs-comment">/**
+     *
+     * @param index 选项value
+     * @returns key 返回已选项的id
+     * @desc 对比已选值与选项
+     */</span>
+    <span class="hljs-keyword">var</span> fnContrastSelected = <span class="hljs-function">(<span class="hljs-params">index</span>) =&gt;</span> {
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> key <span class="hljs-keyword">in</span> oSelected) {
+            <span class="hljs-keyword">if</span> (oSelected[key] === index) {
+                <span class="hljs-keyword">return</span> key
+            }
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+    };
+
+    <span class="hljs-comment">//初始化程序</span>
+    <span class="hljs-keyword">var</span> fnInit = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+
+        select = $(<span class="hljs-string">'select'</span>);
+
+        fnInitSelected();
+
+        fnSelectChange();
+
+        $(<span class="hljs-string">'select'</span>).change(fnSelectChange);
+    };
+
+    <span class="hljs-comment">/**
+     * 添加一个select标签
+     */</span>
+    <span class="hljs-keyword">var</span> fnAddSelect = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+        $(<span class="hljs-string">'.answer'</span>).append(<span class="hljs-string">`&lt;select id="select<span class="hljs-subst">${select.length + <span class="hljs-number">1</span>}</span>" class="form-control"&gt;&lt;/select&gt;`</span>);
+        fnInit()
+    };
+
+    <span class="hljs-comment">//添加select按钮</span>
+    $(<span class="hljs-string">'.addSelect'</span>).click(fnAddSelect);
+
+
+    <span class="hljs-comment">//添加3个select</span>
+    fnAddSelect();
+    fnAddSelect();
+    fnAddSelect();
+})</code></pre>
+        </div>
+    </section>
+</div>
+
+<script src="lib/jquery-v3.2.1.min.js"></script>
+<script>
+    $(() => {
+        var select = $('select'),
+
+            //默认已选值
+            oSelected = {},
+
+            //默认可选值
+            hOptionList = [
+                `<option value="-1">请选择</option>`,
+                `<option value="1">1</option>`,
+                `<option value="2">2</option>`,
+                `<option value="3">3</option>`,
+                `<option value="4">4</option>`,
+                `<option value="5">5</option>`,
+                `<option value="6">6</option>`,
+                `<option value="7">7</option>`,
+                `<option value="8">8</option>`,
+                `<option value="9">9</option>`,
+                `<option value="10">10</option>`,
+            ];
+
+        /**
+         * 初始化已选值
+         */
+        var fnInitSelected = () => {
+            select.each((idx, ele) => {
+                if (ele.id) {
+                    oSelected[ele.id] = -1
+                } else {
+                    console.log('请为select标签创建id')
+                }
+            });
+        };
+
+        /**
+         *
+         * @param event: 更改的select
+         * @desc select更改时触发
+         */
+        var fnSelectChange = (event) => {
+            var sSelectId = event ? event.target.id: null;
+            if (sSelectId) {
+                oSelected[sSelectId] = Number($('#' + sSelectId).val());
+            }
+
+            //清空select下的option
+            fnClearOption();
+
+            //为select添加option
+            for (var i = 0; i < hOptionList.length; i++) {
+                var id = fnContrastSelected(i);
+                if (id) {
+                    $('#' + id).append(hOptionList[i])
+                } else {
+                    select.each((idx, ele) => {
+                        $(ele).append(hOptionList[i])
+                    });
+                }
+            }
+
+            //option渲染完毕 重新赋值
+            select.each((idx, ele) => {
+                $(ele).val(oSelected[ele.id])
+            });
+        };
+
+        /**
+         * 清空select下的option
+         */
+        var fnClearOption = () => {
+            select.each((idx, ele) => {
+                $(ele).html('')
+            });
+        };
+
+
+        /**
+         *
+         * @param index 选项value
+         * @returns key 返回已选项的id
+         * @desc 对比已选值与选项
+         */
+        var fnContrastSelected = (index) => {
+            for (var key in oSelected) {
+                if (oSelected[key] === index) {
+                    return key
+                }
+            }
+            return false
+        };
+
+        //初始化程序
+        var fnInit = () => {
+
+            select = $('select');
+
+            fnInitSelected();
+
+            fnSelectChange();
+
+            $('select').change(fnSelectChange);
+        };
+
+        /**
+         * 添加一个select标签
+         */
+        var fnAddSelect = () => {
+            $('.answer').append(`<select id="select${select.length + 1}" class="form-control"></select>`);
+            fnInit()
+        };
+
+        //添加select按钮
+        $('.addSelect').click(fnAddSelect);
+
+        //添加3个select
+        fnAddSelect();
+        fnAddSelect();
+        fnAddSelect();
+    })
+</script>
+</body>
+</html>

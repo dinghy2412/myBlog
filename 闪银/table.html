@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>数组</title>
+    <style>
+        body, html {
+            padding: 0;
+            margin: 0;
+        }
+
+        #main {
+            overflow: hidden;
+            padding: 10px;
+        }
+
+        .fontRed {
+            color: #f00;
+        }
+
+        img {
+            width: 300px;
+            float: left;
+        }
+
+        table {
+            width: 200px;
+            border-spacing: 0;
+            border-collapse: collapse;
+            display: block;
+            margin: 100px auto;
+        }
+
+        td {
+            width: 50px;
+            text-align: center;
+            border: 1px solid #000;
+        }
+
+        ._3Hc8o {
+            width: 100%;
+            word-wrap: break-word;
+            color: inherit;
+        }
+
+        pre {
+            word-wrap: normal;
+            word-break: break-all;
+            white-space: pre;
+            overflow: auto;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #d9d9d9;
+            border-radius: 0;
+            line-height: 20px;
+            background-color: #f2f2f2;
+        }
+
+        code {
+            padding: 0;
+            background-color: transparent;
+            white-space: pre;
+            border: none;
+            color: #657b83;
+            font-size: 12px;
+            display: block;
+            overflow-x: auto;
+        }
+
+    </style>
+</head>
+
+<body>
+<div id="main">
+    <header>
+        <a href="https://www.dinghyu.com/shanyin/table.html">题1:数组</a>
+        <a href="https://www.dinghyu.com/shanyin/select_jQuery.html">题2:select-jQuery</a>
+        <a href="https://www.dinghyu.com/shanyin/select_vue.html">题2:select-vue</a>
+        <a href="https://s1.ax2x.com/2018/03/08/Ch7nK.png">题目IMG</a>
+        <a href="https://s1.ax2x.com/2018/03/08/Ch7nK.png">题目IMG</a>
+    </header>
+
+    <div id="answer">
+
+    </div>
+
+    <section class="code">
+        <h1>code</h1>
+
+        <div class="note-view _3Hc8o"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> aData = [
+    [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">33</span>, <span class="hljs-number">5</span>],
+    [<span class="hljs-number">2</span>, <span class="hljs-number">10</span>, <span class="hljs-number">15</span>, <span class="hljs-number">16</span>],
+    [<span class="hljs-number">3</span>, <span class="hljs-number">1</span>, <span class="hljs-number">21</span>, <span class="hljs-number">20</span>]
+];
+
+<span class="hljs-comment">/**
+ * 添加表格
+ * @param array
+ * @param htmlTagId 父标签ID
+ */</span>
+
+<span class="hljs-keyword">var</span> fnAddTable = <span class="hljs-function">(<span class="hljs-params">array = [], htmlTagId = <span class="hljs-string">'answer'</span></span>) =&gt;</span> {
+    <span class="hljs-keyword">var</span> hParent = <span class="hljs-built_in">document</span>.getElementById(htmlTagId);
+
+    <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">Array</span>.isArray(array) || !hParent) {
+
+        <span class="hljs-keyword">var</span> sErrorTxt = <span class="hljs-built_in">Array</span>.isArray(array) ? hParent ? <span class="hljs-string">''</span> : <span class="hljs-string">'找不到标签'</span> : <span class="hljs-string">'数据类型错误'</span>;
+        <span class="hljs-built_in">console</span>.log(sErrorTxt);
+
+        <span class="hljs-keyword">return</span>
+    }
+
+    <span class="hljs-keyword">var</span> hTable = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'table'</span>);
+
+    array.forEach(<span class="hljs-function">(<span class="hljs-params">arrayEle</span>) =&gt;</span> {
+
+        <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">Array</span>.isArray(arrayEle)) {
+            <span class="hljs-keyword">var</span> sErrorTxt = <span class="hljs-string">'数据类型错误'</span>;
+            <span class="hljs-built_in">console</span>.log(sErrorTxt);
+            <span class="hljs-keyword">return</span>
+        }
+
+        <span class="hljs-keyword">var</span> hTr = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'tr'</span>),
+            maxNum = <span class="hljs-built_in">Math</span>.max ? <span class="hljs-built_in">Math</span>.max.apply(<span class="hljs-keyword">this</span>, arrayEle) : <span class="hljs-literal">null</span>; <span class="hljs-comment">//取出每行数据的最大值</span>
+
+        arrayEle.forEach(<span class="hljs-function">(<span class="hljs-params">ele</span>) =&gt;</span> {
+
+            <span class="hljs-keyword">var</span> hTd = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'td'</span>);
+
+            hTd.innerHTML = ele;
+
+            hTd.className = maxNum === ele ? <span class="hljs-string">"fontRed"</span> : <span class="hljs-string">''</span>;
+
+            hTr.appendChild(hTd)
+        });
+
+        hTable.appendChild(hTr);
+
+    });
+
+    hParent.appendChild(hTable)
+};
+
+fnAddTable(aData, <span class="hljs-string">'answer'</span>)</code></pre>
+        </div>
+    </section>
+
+</div>
+<script>
+    var aData = [
+        [1, 2, 33, 5],
+        [2, 10, 15, 16],
+        [3, 1, 21, 20]
+    ];
+
+    /**
+     * 添加表格
+     * @param array
+     * @param htmlTagId 父标签ID
+     */
+
+    var fnAddTable = (array = [], htmlTagId = 'answer') => {
+        var hParent = document.getElementById(htmlTagId);
+
+        if (!Array.isArray(array) || !hParent) {
+
+            var sErrorTxt = Array.isArray(array) ? hParent ? '' : '找不到标签' : '数据类型错误';
+            console.log(sErrorTxt);
+
+            return
+        }
+
+        var hTable = document.createElement('table');
+
+        array.forEach((arrayEle) => {
+
+            if (!Array.isArray(arrayEle)) {
+                var sErrorTxt = '数据类型错误';
+                console.log(sErrorTxt);
+                return
+            }
+
+            var hTr = document.createElement('tr'),
+                maxNum = Math.max ? Math.max.apply(this, arrayEle) : null; //取出每行数据的最大值
+
+            arrayEle.forEach((ele) => {
+
+                var hTd = document.createElement('td');
+
+                hTd.innerHTML = ele;
+
+                hTd.className = maxNum === ele ? "fontRed" : '';
+
+                hTr.appendChild(hTd)
+            });
+
+            hTable.appendChild(hTr);
+
+        });
+
+        hParent.appendChild(hTable)
+    };
+
+    fnAddTable(aData, 'answer')
+
+</script>
+</body>
+</html>
