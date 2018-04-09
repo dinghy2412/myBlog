@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>blog API</title>
+    <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <style>
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="page-header">
+        <h1><small>在这里</small>发射
+            <small>biu</small>
+        </h1>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-3">
+            <ul class="nav nav-pills nav-stacked menu">
+                <li role="presentation" class="active"><a href="#">添加</a></li>
+                <li role="presentation"><a href="#">修改</a></li>
+                <li role="presentation"><a href="#">删除</a></li>
+            </ul>
+        </div>
+
+        <div class="col-xs-12 col-sm-9">
+            <form class="form-horizontal createForm">
+                <div class="form-group">
+                    <label for="create1" class="col-sm-2 control-label">标题</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="create1" placeholder="标题">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="create2" class="col-sm-2 control-label">作者ID</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" id="create2" placeholder="作者ID" value="1">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="create3" class="col-sm-2 control-label">标签</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="create3" placeholder="英文逗号分割">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">菜单分类</label>
+                    <div class="col-sm-10">
+                        <label class="radio-inline">
+                            <input type="radio" name="createMenuType" id="create41" value="Code" checked>Code
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="createMenuType" id="create42" value="Life">Life
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="create5" class="col-sm-2 control-label">内容</label>
+                    <div class="col-sm-10">
+                        <textarea id="create5" class="form-control" rows="10"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#createModal">
+                            Sign
+                            in
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <form class="form-horizontal reviseForm">
+                <div class="form-group">
+                    <label for="revise1" class="col-sm-2 control-label">文章ID</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" id="revise1" placeholder="文章ID">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label  class="col-sm-2 control-label">选择字段</label>
+                    <div class="col-sm-10">
+                        <label class="radio-inline">
+                            <input type="radio" name="reviseMenuType" value="title" checked>标题
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="reviseMenuType" value="authorId">作者ID
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="reviseMenuType" value="tags">标签
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="reviseMenuType" value="menuType">菜单类别
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="reviseMenuType" value="HTML">内容
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="revise1" class="col-sm-2 control-label">updateAt</label>
+                    <div class="col-sm-10 checkbox">
+                        <label>
+                            <input type="checkbox" class="updateAt" checked>是否更新updateAt
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="revise1" class="col-sm-2 control-label">输入</label>
+                    <div class="col-sm-10">
+                        <textarea id="revise2" class="form-control" rows="10"  placeholder="请输入..."></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#createModal">
+                            Sign
+                            in
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="delete1" class="col-sm-2 control-label">文章ID</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" id="delete1" placeholder="文章ID">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#createModal">
+                            Sign
+                            in
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+<div id="createModal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog"
+     aria-labelledby="mySmallModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">提示</h4>
+            </div>
+            <div class="modal-body">
+                <p>确认提交</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" id="myButton" data-loading-text="Loading..." class="biu btn btn-primary"
+                        autocomplete="off">
+                    biu
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="fail" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog"
+     aria-labelledby="mySmallModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">提示</h4>
+            </div>
+            <div class="modal-body">
+                <p>发送失败</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+    var data = {
+//        "title" : "无333444332222题",
+//        "tags" : ["西游记"],
+//        "HTML" : a,
+//        "authorId" : "1",
+//        "menuType" : "Life",
+        "articleId" : 14,
+        "token" : "031f328e358b5a911849f2ff11f70516",
+        "updatedAt" : "2018-02-15 10:19:00",
+        silent : true
+    };
+    var token = "031f328e358b5a911849f2ff11f70516";
+
+    //添加
+    var createFn = ($btn) => {
+        var HTML = $('#create5').val();
+        var data = {
+            title : $('#create1').val(),
+            authorId : $('#create2').val(),
+            tags : $('#create3').val().split(','),
+            menuType : $('.createForm input[name="createMenuType"]:checked').val(),
+            HTML : HTML,
+            token : token
+        };
+
+        $.ajax({
+            url : "http://127.0.0.1/api/v1/article",
+            type : "POST",
+            data : JSON.stringify(data),
+            contentType : 'application/json; charset=utf-8',
+            success : () => {
+                $btn.button('reset');
+                $('#createModal').modal('hide')
+            },
+            error : () => {
+                $btn.button('reset');
+                $('#createModal').modal('hide');
+                $('#fail').modal('show');
+                setTimeout(() =>  $('#fail').modal('hide'), 3000)
+            }
+        });
+    };
+
+    var reviseFn = ($btn) => {
+        var data = {
+            articleId : $('#revise1').val(),
+            token : token,
+            silent : !$('.updateAt').is(':checked')
+        };
+        data[$('.reviseForm input[name="reviseMenuType"]:checked').val()] = $('#revise2').val();
+        $.ajax({
+            url : "http://127.0.0.1/api/v1/article",
+            type : "PATCH",
+            data : JSON.stringify(data),
+            contentType : 'application/json; charset=utf-8',
+            success : () => {
+                $btn.button('reset');
+                $('#createModal').modal('hide')
+            },
+            error : () => {
+                $btn.button('reset');
+                $('#createModal').modal('hide');
+                $('#fail').modal('show')
+                setTimeout(() =>  $('#fail').modal('hide'), 3000)
+            }
+        });
+    };
+
+    var deleteFn = ($btn) => {
+        var articleId = $('#delete1').val();
+            $.ajax({
+                url : "http://127.0.0.1/api/v1/article?articleId=" + articleId + "&token=" + token,
+                type : "DELETE",
+                success : () => {
+                    $btn.button('reset');
+                    $('#createModal').modal('hide')
+                },
+                error : () => {
+                    $btn.button('reset');
+                    $('#createModal').modal('hide');
+                    $('#fail').modal('show');
+                    setTimeout(() =>  $('#fail').modal('hide'), 3000)
+                }
+            });
+    };
+
+    $('.biu').on('click', function () {
+        var $btn = $(this).button('loading');
+        if ($('.menu li:eq(0)').hasClass('active')) {
+            createFn($btn)
+        } else if ($('.menu li:eq(1)').hasClass('active')) {
+            reviseFn($btn)
+        } else if ($('.menu li:eq(2)').hasClass('active')) {
+            deleteFn($btn)
+        }
+    });
+
+    //菜单
+    $('.menu li').click(function () {
+        $('.menu li').removeClass("active");
+        $(this).addClass("active");
+        $('.form-horizontal').hide();
+        $('.form-horizontal:eq('+ $(this).index() + ')').show()
+    })
+
+    $('.menu li:eq(0)').click()
+
+</script>
+</body>
+</html>
