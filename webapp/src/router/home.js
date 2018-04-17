@@ -11,18 +11,8 @@ class Home extends React.Component {
     }
 
     state = {
-        imgUrl : "?imageslim",
-        wxQrCodeFlag : false,
-        weiboQrCodeFlag : false
+        imgUrl : "?imageslim"
     };
-
-    weixinQrCode () {
-        this.state.wxQrCodeFlag = true
-    }
-
-    weiboQrCode () {
-        this.state.weiboQrCodeFlag = true
-    }
 
     render () {
         return (
@@ -97,18 +87,6 @@ class Home extends React.Component {
                             <div className="title">
                                 About Me
                             </div>
-
-                            {/*<Link to="AboutMe">*/}
-                                {/*<svg className="icon weixin" aria-hidden="true" onClick={this.weixinQrCode}>*/}
-                                    {/*<use xlinkHref="#icon-wechat"></use>*/}
-                                {/*</svg>*/}
-                            {/*</Link>*/}
-
-                            {/*<Link to="AboutMe">*/}
-                                {/*<svg className="icon weibo" aria-hidden="true">*/}
-                                    {/*<use xlinkHref="#icon-weibo"></use>*/}
-                                {/*</svg>*/}
-                            {/*</Link>*/}
                         </Link>
                     </div>
                 </section>
