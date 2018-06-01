@@ -19,3 +19,18 @@ var server = app.listen(8080, 'localhost', function () {
 	var port = server.address().port;
 	console.log("应用实例，访问地址为 http://%s:%s", host, port)
 });
+
+var WebSocketServer = require('ws').Server,
+    wss = new WebSocketServer({ port: 8181 });
+wss.on('connection', function (ws) {
+    console.log('client connected');
+    ws.on('message', function (message) {
+        var tempData = JSON.parse(message);
+        tempData.status = '已接收';
+        setTimeout(function () {
+            ws.send(JSON.stringify(tempData));
+        }, 2000);
+    });
+
+});
+
